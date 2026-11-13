@@ -1,0 +1,35 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/core",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Investitore Pragmatico"]
+license = "MIT"
+
+[workspace.dependencies]
+rust_decimal = { version = "1.36", features = ["serde-with-str", "maths"] }
+rust_decimal_macros = "1.36"
+chrono = { version = "0.4", features = ["serde"] }
+chrono-tz = "0.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+thiserror = "2.0"
+anyhow = "1.0"
+tracing = "0.1"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+float_arithmetic = "deny"
+module_name_repetitions = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+must_use_candidate = "allow"
