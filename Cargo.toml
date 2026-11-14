@@ -30,7 +30,7 @@ reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"
 async-trait = "0.1"
 rusqlite = { version = "0.32", features = ["bundled"] }
 directories = "6.0"
-keyring = "3.6"
+keyring = { version = "3.6", features = ["apple-native", "windows-native", "sync-secret-service", "crypto-rust"] }
 clap = { version = "4.5", features = ["derive"] }
 quick-xml = "0.37"
 csv = "1.3"
